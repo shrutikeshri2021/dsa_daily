@@ -27,7 +27,11 @@ public class Arrays {
             }
             
         }
+<<<<<<< HEAD
         System.out.println("not found");
+=======
+        System.out.println("not found");  
+>>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     }
 
 
@@ -43,7 +47,11 @@ public static void reversearray(int arr[]){
 
             
     }
+<<<<<<< HEAD
 //pairs in array
+=======
+
+>>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     public static void pair(int arr[]){
     for(int i=0;i<arr.length;i++){
         for(int j=i+1;j<arr.length;j++){
@@ -51,7 +59,11 @@ public static void reversearray(int arr[]){
         }
         System.out.println();
     }
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     public static void subarray(int arr[]){
     for(int i=0;i<arr.length;i++){
         for(int j=i+1;j<arr.length;j++){
@@ -65,6 +77,7 @@ public static void reversearray(int arr[]){
 
     }
 
+<<<<<<< HEAD
     public static void maxsubarraybruteforce(int arr[]){
         int curr=0;
         int max=Integer.MIN_VALUE;
@@ -157,6 +170,18 @@ System.out.println("max "+max);
         //pair(arr);
         //subarray(arr);
 
+=======
+
+
+    
+//pairs in array
+    public static void main(String[] args){
+        int arr[] ={2,3,4,5,8,9};
+        int key=8;
+        //maxsubarray(arr);
+        //pair(arr);
+        subarray(arr);
+>>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
         //reversing array
         /*
         reversearray(arr);
