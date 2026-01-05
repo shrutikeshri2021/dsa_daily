@@ -27,11 +27,7 @@ public class Arrays {
             }
             
         }
-<<<<<<< HEAD
         System.out.println("not found");
-=======
-        System.out.println("not found");  
->>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     }
 
 
@@ -47,11 +43,7 @@ public static void reversearray(int arr[]){
 
             
     }
-<<<<<<< HEAD
 //pairs in array
-=======
-
->>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     public static void pair(int arr[]){
     for(int i=0;i<arr.length;i++){
         for(int j=i+1;j<arr.length;j++){
@@ -59,11 +51,7 @@ public static void reversearray(int arr[]){
         }
         System.out.println();
     }
-<<<<<<< HEAD
 
-=======
-   
->>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
     public static void subarray(int arr[]){
     for(int i=0;i<arr.length;i++){
         for(int j=i+1;j<arr.length;j++){
@@ -77,7 +65,6 @@ public static void reversearray(int arr[]){
 
     }
 
-<<<<<<< HEAD
     public static void maxsubarraybruteforce(int arr[]){
         int curr=0;
         int max=Integer.MIN_VALUE;
@@ -136,52 +123,88 @@ System.out.println("max "+max);
     }
 
     public static void rainwater(int arr[]){
+        if (arr == null || arr.length < 3) {
+        System.out.println(0);
+        return;
+    }
         int left[]=new int[arr.length];
         int right[]=new int[arr.length];
-        int leftmax=0,rightmax=0;
-        int right[0]=rightmax=0;
+        
+        left[0]=arr[0];
+        right[arr.length-1]=arr[arr.length-1];
         
         for (int i=1;i<arr.length;i++){
-            leftmax=Math.max(leftmax,arr[i-1]);
-            left[i]=leftmax;
+            left[i]=Math.max(left[i-1],arr[i]);
+            
             
         }
         for(int i=0;i<arr.length;i++){
             System.out.print(left[i]);
         }
+         System.out.println();
+       for(int i=arr.length-2;i>=0;i--){
+        right[i]=Math.max(arr[i],right[i+1]);
         
-        for (int i=arr.length-1;i>=0;i--){
-            rightmax=Math.min(rightmax,arr[i+1]);
-            right[i]=rightmax;
-            
-        }
-        for(int i=0;i<arr.length;i++){
+       }
+       for(int i=0;i<arr.length;i++){
             System.out.print(right[i]);
         }
+         System.out.println();
+        int storage=0;
+        for(int i=0;i<arr.length;i++){
+        
+        int level= Math.min(left[i],right[i]);
+        storage +=(level- arr[i])>=0 ? level- arr[i]: 0 ;
+        
+        
     }
+    System.out.println(storage);
+    
+}
+
+
+public static void buysellstock(int arr[]){
+    if (arr == null || arr.length < 2) {
+    System.out.println(0);
+    return;
+}
+    int currp=0;
+    int maxp=0;
+    int minp=Integer.MAX_VALUE;
+    for(int i=0;i<arr.length-1;i++){
+        int j=i+1;
+
+    
+        if(minp>arr[i]){
+            minp=arr[i];
+        }
+        if(minp<arr[j]){
+            currp=arr[j]-minp;
+            if(maxp<currp){
+                maxp=currp;
+            }
+        
+    }
+     j++;
+        
+        }
+       System.out.println(maxp);
+    
+    
+}
 
     public static void main(String[] args){
-        int arr[] ={2,3,4,5,8,9};
+        //int arr[] ={4,2,0,6,3,2,5};
+        int arr[] ={7,1,5,3,7,4};
         int key=8;
-        rainwater(arr);
+        buysellstock(arr);
+        //rainwater(arr);
         //kadane(arr);
         //maxsubarrayprefixsum(arr);
         //maxsubarraybruteforce(arr);
         //pair(arr);
         //subarray(arr);
 
-=======
-
-
-    
-//pairs in array
-    public static void main(String[] args){
-        int arr[] ={2,3,4,5,8,9};
-        int key=8;
-        //maxsubarray(arr);
-        //pair(arr);
-        subarray(arr);
->>>>>>> 186ae6ac4ce26125fd33d1e85cf9bc1d8fa14d61
         //reversing array
         /*
         reversearray(arr);
