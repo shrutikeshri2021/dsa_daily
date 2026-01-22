@@ -2,9 +2,6 @@
 import java.util.*;
 public class Patterns {
 
-
-
-
     public static void patterns(int n, int m){
         for(int i=1;i<=n;i++){
             for(int j=1;j<=m;j++){
@@ -17,7 +14,7 @@ public class Patterns {
             }
         System.out.println();
         }
-    } 
+    }
     
     public static void zeroone(int n){
         for(int i=0;i<n;i++){
@@ -33,9 +30,7 @@ public class Patterns {
         }
     }
 
-    /**
-     * @param n
-     */
+
     public static void butterfly(int n){
         for(int i=1;i<=n;i++){
             for(int j=1;j<=i;j++){
@@ -73,9 +68,9 @@ public static void rhombus(int n){
         for(int j=1;j<=n;j++){
             System.out.print("*  ");
         }
-         System.out.println();
+        System.out.println();
     }
-   
+
 }
 
 public static void palin(int n){
@@ -101,26 +96,19 @@ public static int factorial(int n) {
     return fact;
 }
 
-public static char charrr(int n);
-    char ch="a";
+/*public static void charrr(int n);
+    char ch='a';
     for(int i=0;i<n;i++){
-        for(intj=0;j<=i;j++){
-            return ch;
+        for(int j=0;j<=i;j++){
+            System.out.println(ch);
             
         }
         ch++;
     }
-
+*/
 public static void main(String[] args) {
-    //System.out.println(factorial(5));
+    System.out.println(factorial(5));
     //System.out.println(charrr(5));
-    char ch='A';
-    for(int i=0;i<5;i++){
-        for(int j=1;j<=i;j++){
-            System.out.println(ch);
-            ch++;
+    
         }
     }
-}
-
-}
