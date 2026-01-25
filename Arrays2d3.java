@@ -62,9 +62,9 @@ public class Arrays2d3 {
 }
 
 
-approach 2 optimized
+//approach 2 optimized
 /*
-public class Arrays2d3 {
+// public class Arrays2d3 {
 
     public static void diagonalMatrix(int[][] matrix) {
         int n = matrix.length;
