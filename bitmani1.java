@@ -48,14 +48,59 @@ public class bitmani1 {
         System.out.println( Integer.toBinaryString(BitMask));
         System.out.println(Integer.toBinaryString(number & BitMask));
     }
+    public static boolean poweroftwo(int n){
+        int i=0;
+        while(i<=(n/2)){
+                int m =(1<<(i));
+            if(n==m){
+                    System.out.println("true");
+                    return  true;
+                }
+            i++;
+            }
+            return false;
+    }
+    //or
+    public static boolean poweroftwo(int n){
+        return (n &(n-1))==0;
+    }
+//no of 1s
+    public static void countsetbits (int n){
+        int count=0;
+        while(n>0){
+            if((n%2)!=0){
+                count++;
+            }
+            n=(n)>>1;
+        }
+        System.out.println(count);
+    }
+
+    //difficult, study
+    public static int exponent(int a, int n){
+        int ans=1;
+        while(n>0){
+            if((n&1)!=0){
+                ans=ans*a;
+            }
+            a=a*a;
+            n=n>>1;
+        }
+        return ans;
+    }
+
+
 
     public static void main(String args[]){
+        //System.out.println(exponent(3,5));
         //operators
         /*
         System.out.println(~5);System.out.println(5 & 6);System.out.println(5|6);
         System.out.println(5^6);System.out.println(5 <<2);System.out.println(5>>2);
        */
         clearRangeBits(2,7, 0b100111010011);
+        //countsetbits (16);
+        //System.out.println(poweroftwo(32));
         /*
         evenodd(5);
         evenodd(0);
