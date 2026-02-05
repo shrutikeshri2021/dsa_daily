@@ -98,7 +98,7 @@ public class bitmani1 {
         System.out.println(~5);System.out.println(5 & 6);System.out.println(5|6);
         System.out.println(5^6);System.out.println(5 <<2);System.out.println(5>>2);
        */
-        clearRangeBits(2,7, 0b100111010011);
+        //-+clearRangeBits(2,7, 0b100111010011);
         //countsetbits (16);
         //System.out.println(poweroftwo(32));
         /*
