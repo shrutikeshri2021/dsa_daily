@@ -125,14 +125,92 @@ public class recurision1 {
     else
         return n * half * half;
 }
+public static int optimizedpower(int a,int n){
+    if(n==0){
+        return 1;
+    }
+    int halfpower=optimizedpower(a,n/2);
+    int halfpowersq=halfpower*halfpower;
+    //n is odd
 
+    if(n%2!=0){
+        halfpowersq = a* halfpowersq;
+    }
+    return halfpowersq;
+}
+public static int tiling(int n){
+    if(n==0||n==1){
+        return 1;
+    }
+    int fnm1=tiling(n-1);
+    //vertical
+    int fnm2=tiling(n-2);
+    int toways=fnm1+fnm2;
 
+return toways;
+}
+
+public static void removedup(String str,int idx, StringBuilder newStr, boolean map[]){
+    if(idx==str.length()){
+        System.out.println(newStr);
+        return;
+    }
+    char currChar=str.charAt(idx);
+    if(map[currChar -'a']==true){
+        //duplicate
+        removedup(str,idx+1,newStr,map);
+    } else{
+        map[currChar - 'a']=true;
+        removedup(str,idx+1,newStr.append(currChar),map);
+    }
+}
+
+    public static int friendspairing(int n){
+        if(n==1||n==2){
+            return n;
+        }
+        //single
+        int fnm1=friendspairing(n-1);
+        //pair
+        int fnm2=friendspairing(n-2);
+        int pairways=(n-1)*fnm2;
+        int totways= fnm1+pairways;
+        return totways;
+        
+    }
+    public static int friendspairing2(int n){
+        if(n==1||n==2){
+            return n;
+        }
+
+        return friendspairing(n-1) + (n-1)*friendspairing(n-2);
+        
+    }
+
+    public static void printbinstring(int n, int lastplace, String str){
+        if(n==0){
+            System.out.println(str);
+            return;
+        }
+        printbinstring(n-1,0,str+"0");
+        if(lastplace==0){
+            printbinstring(n-1,1,str+"1");
+        }
+    }
 
     public static void main(String[] args){
-
-        System.out.println(power(5,2,1,1));
-        System.out.println(poweropt(5,2));
-        System.out.println(poweropt2(5,2));
+        printbinstring(3,0,"");
+        //System.out.println(friendspairing(4));
+        //System.out.println(friendspairing2(4));
+        //String str="appnnacollege";
+        //removedup(str,0,new StringBuilder(""),new boolean[26]);
+        
+        
+        //System.out.println(tiling(3));
+        //System.out.println(optimizedpower(2,10));
+        //System.out.println(power(5,2,1,1));
+        //System.out.println(poweropt(5,2));
+        //System.out.println(poweropt2(5,2));
         //int arr[]={1,2,3,4,2,6,7,4,1,2,8,99,90};
         //System.out.println(lastoccurance(arr,2,arr.length-1));
         //System.out.println(firstoccurance(arr,90,0));
@@ -145,8 +223,8 @@ public class recurision1 {
 
 
         //printfibonaccirecursion(7);
-        //System.out.println(fibonaccirecursion(6));
-        //fibonacci(5);
+        //System.out.println(fibonaccirecursion(7));
+        //fibonacci(7);
         //System.out.println(sum(5));
         //System.out.println(factorial(5));
         //printnto1(10);
